@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  triggers { pollSCM('H/2 * * * *') }  // poll every 2 minutes
+  stages {
+    stage('Hello CI') {
+      steps {
+        echo 'Repo A: Jenkins is wired up ✅'
+      }
+    }
+  }
+}
